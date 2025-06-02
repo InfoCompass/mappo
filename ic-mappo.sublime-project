@@ -1,0 +1,59 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"follow_symlinks": true,
+		},
+	],
+
+	"settings": {
+
+		"LSP": {
+			"deno": {
+				"command": ["deno", "lsp"],
+				"initializationOptions": {
+					"config": "deno.json",
+					"enable": true,
+					"lint": true,
+					"unstable": true,
+				},
+				"enabled": true,
+				"languages": [
+					{
+						"languageId": "javascript",
+						"scopes": ["source.js"],
+						"syntaxes": [
+							"Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"Packages/JavaScript/JavaScript.sublime-syntax"
+						],
+					},
+					{
+						"languageId": "typescript",
+						"scopes": ["source.ts"],
+						"syntaxes": [
+							"Packages/TypeScript-TmLanguage/TypeScript.tmLanguage",
+							"Packages/TypeScript Syntax/TypeScript.tmLanguage"
+						],
+					}
+				],
+			},
+			"Deno": {
+				"enabled": true,
+			},
+			"LSP-typescript": {
+				"enabled": false,
+			},
+			"LSP-angular":{
+				"enabled": false,
+			},
+			"LSP-eslint":{
+				"enabled": false,
+			},
+			"formatters":
+			{
+				"source.ts": "Deno"
+			},
+		},
+	},
+}

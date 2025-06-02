@@ -1,0 +1,20 @@
+{
+	"tasks": {
+		"dev": "deno run --watch main.ts"
+	},
+	"imports": {
+		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.0",
+		"@oak/oak": "jsr:@oak/oak@^17.1.4",
+		"@std/assert": "jsr:@std/assert@1",
+		"rxjs": "npm:rxjs@^7.8.2"
+	},
+	"patch": [
+		"../../mappo-aggregato"
+	],
+	"fmt": {
+		"semiColons": false,
+		"useTabs": true,
+		"indentWidth": 4,
+		"lineWidth": 120
+	}
+}
