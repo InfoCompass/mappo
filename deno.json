@@ -1,6 +1,7 @@
 {
 	"tasks": {
-		"dev": "deno run --watch main.ts"
+		"dev": "deno run --watch main.ts",
+		"start": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron main.ts "
 	},
 	"imports": {
 		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.0",
