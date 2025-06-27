@@ -1,7 +1,7 @@
 {
 	"tasks": {
 		"dev": "deno run --watch main.ts",
-		"start": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron main.ts "
+		"start": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron main.ts"
 	},
 	"imports": {
 		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.0",
@@ -9,9 +9,6 @@
 		"@std/assert": "jsr:@std/assert@1",
 		"rxjs": "npm:rxjs@^7.8.2"
 	},
-	"patch": [
-		"../../mappo-aggregato"
-	],
 	"fmt": {
 		"semiColons": false,
 		"useTabs": true,

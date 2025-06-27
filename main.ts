@@ -41,7 +41,7 @@ const mappo = 	new MappoBackend({
 
 const log	=	new LogSubject()
 
-log.importLogsFrom(mappo.log$)
+log.importLogsFrom(mappo.log$, "MappoBackend")
 log.importUncaughtErrors()
 log.importUnhandledRejections()
 
@@ -62,6 +62,8 @@ app.use((ctx : Context,  next: Next) => {
 app.use(router.routes())
 app.use(router.allowedMethods())
 
+app.addEventListener("listen", () => log.info("Listening on 8099"))
 app.listen({ port: 8099 })
+
 
 await mappo.updateAll()

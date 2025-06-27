@@ -4,6 +4,4 @@ WORKDIR /ic-mappo
 
 COPY . .
 
-RUN deno install
-
-CMD deno run start
+CMD ["deno", "run", "--allow-read","--allow-write", "--allow-net", "--unstable-kv", "--unstable-cron", "main.ts"]
