@@ -1,0 +1,12 @@
+{
+	"name": "mappo",
+	"processes": [
+		{
+			"id": 			"mappo-pa",
+			"cwd":			".",
+			"cmd": 			"deno run serve-pa",
+			"autostart": 	true,
+			"restart": 		"always"
+		}
+	]
+}
