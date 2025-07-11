@@ -6,7 +6,7 @@
 			"cwd":			".",
 			"cmd": 			"deno run serve-otel-pa",
 			"autostart": 	true,
-			"restart": 		"always"
+			"restart": 		"error"
 		}
 	]
 }
