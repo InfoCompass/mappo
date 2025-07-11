@@ -4,7 +4,7 @@
 		{
 			"id": 			"mappo-pa",
 			"cwd":			".",
-			"cmd": 			"deno run serve-pa",
+			"cmd": 			"deno run serve-otel-pa",
 			"autostart": 	true,
 			"restart": 		"always"
 		}
