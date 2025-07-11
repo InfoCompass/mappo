@@ -33,7 +33,11 @@ export async function icRunMappo(
 	log.importUncaughtErrors()
 	log.importUnhandledRejections()
 
-	log.subscribe( x => console.log(x) )
+	log.subscribe( data => {
+		data.level === "error"
+		?	console.error(data)
+		:	console.info(data) 
+	})
 
 	await mappo.start()
 
