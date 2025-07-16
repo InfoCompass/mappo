@@ -14,7 +14,7 @@ const paAdapter = 	new InfoCompassAdapter({
 					})	
 
 icRunMappo(
-	"mappo-pa",
+	"pa",
 	"pa-item-storage",
 	[ paAdapter ],
 	9901

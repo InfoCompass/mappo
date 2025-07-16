@@ -4,7 +4,8 @@ import	{
 			DenoKvStorage, 
 			NaiveMappoDiffer, 
 			getOakRouter, 
-			LogSubject  
+			LogSubject,
+			flatLog  
 		} 								from "@mappo-aggregato/mappo-aggregato/backend"
 import	{ 
 			Application, 
@@ -29,15 +30,11 @@ export async function icRunMappo(
 
 	const log		=	new LogSubject()
 
-	log.importLogsFrom(mappo.log$, instanceName)
+	log.importLogsFrom(mappo.log$, `MappoBacken(${instanceName})`, "prefix")
 	log.importUncaughtErrors()
 	log.importUnhandledRejections()
 
-	log.subscribe( data => {
-		data.level === "error"
-		?	console.error(data)
-		:	console.info(data) 
-	})
+	log.subscribe(flatLog)
 
 	await mappo.start()
 
@@ -52,7 +49,7 @@ export async function icRunMappo(
 	app.use(router.routes())
 	app.use(router.allowedMethods())
 
-	app.addEventListener("listen", () => log.info("Listening on 8099"))
+	app.addEventListener("listen", () => log.info(`Listening on port`))
 	app.listen({ port })
 
 	await mappo.updateAll()
