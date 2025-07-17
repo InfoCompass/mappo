@@ -13,9 +13,9 @@ const paAdapter = 	new InfoCompassAdapter({
 						schedule: 	scheduleFromCron("10 */1 * * *")
 					})	
 
-icRunMappo(
-	"pa",
-	"pa-item-storage",
-	[ paAdapter ],
-	9901
-)
+icRunMappo({
+	instanceName: 	"pa",
+	storageName:	"pa-item-storage",
+	adapters:		[ paAdapter ],
+	port:			9900
+})

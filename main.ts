@@ -14,12 +14,19 @@ import	{
 		} 								from "@oak/oak"
 
 
-export async function icRunMappo(
+export interface RunConfig {	
 	instanceName	: string,
 	storageName		: string,
 	adapters		: Adapter[],
 	port			: number,
-){
+}
+
+export async function icRunMappo({
+	instanceName,
+	storageName,
+	adapters,
+	port,
+} : RunConfig){
 
 
 	const mappo 	= 	new MappoBackend({
@@ -49,7 +56,7 @@ export async function icRunMappo(
 	app.use(router.routes())
 	app.use(router.allowedMethods())
 
-	app.addEventListener("listen", () => log.info(`Listening on port`))
+	app.addEventListener("listen", () => log.info(`Listening on port ${port}`))
 	app.listen({ port })
 
 	await mappo.updateAll()

@@ -5,3 +5,5 @@ services:
         container_name: mappo-pa
         restart: unless-stopped
         command: /bin/sh -c 'deno run serve-otel-pa'
+        ports:
+            - "9901:9900"
