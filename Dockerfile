@@ -1,5 +1,8 @@
-FROM denoland/deno:2.3.6
+FROM denoland/deno:latest
 
 WORKDIR /ic-mappo
 
-COPY . .
+COPY ./src ./src
+COPY ./deno* .
+
+RUN mkdir storage

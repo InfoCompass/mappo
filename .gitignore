@@ -1,3 +1,4 @@
-.pup
 *-storage*
 *-storage
+storage/*
+!storage/.gitkeep 

@@ -15,7 +15,7 @@ const paAdapter = 	new InfoCompassAdapter({
 
 icRunMappo({
 	instanceName: 	"pa",
-	storageName:	"pa-item-storage",
+	storageName:	"storage/pa-item-storage",
 	adapters:		[ paAdapter ],
 	port:			9900
 })

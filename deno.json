@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"serve-pa": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron mappo-pa.ts",
+		"serve-pa": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-pa.ts",
 		"serve-otel-pa": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-pa deno run serve-pa --unstable-otel",
 	},
 	"imports": {

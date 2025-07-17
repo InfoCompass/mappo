@@ -1,9 +1,11 @@
 services:
     mappo-pa:
-        build: 
-            dockerfile: ./Dockerfile
+        build: .
         container_name: mappo-pa
         restart: unless-stopped
         command: /bin/sh -c 'deno run serve-otel-pa'
         ports:
-            - "9901:9900"
+            - 9901:9900
+            - 3000:3000
+            - 4317:4317
+            - 4318:4318
