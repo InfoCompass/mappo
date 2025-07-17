@@ -2,9 +2,6 @@
 	"tasks": {
 		"serve-pa": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron mappo-pa.ts",
 		"serve-otel-pa": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-pa deno run serve-pa --unstable-otel",
-		"ensure-pup": "pup --version || deno run -Ar jsr:@pup/pup setup",
-		"start":"deno run ensure-pup && pup run --enable-service",
-		"stop":"pup terminate"
 	},
 	"imports": {
 		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.7",
