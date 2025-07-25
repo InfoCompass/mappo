@@ -5,8 +5,8 @@ import { icRunMappo 		} from './main.ts'
 
 const paAdapter = 	new InfoCompassAdapter({
 						meta:	{
-							name: 		"pa-adapter",
-							sourceUrl:	"https://api.socialmap-berlin.de/items",
+							name: 		"pa",
+							sourceUrl:	"https://socialmap-berlin.de",
 							sourceName:	"socialmap berlin"
 						},
 						url: 		"https://api.socialmap-berlin.de/items",

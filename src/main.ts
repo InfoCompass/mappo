@@ -37,7 +37,7 @@ export async function icRunMappo({
 
 	const log		=	new LogSubject()
 
-	log.importLogsFrom(mappo.log$, `MappoBacken(${instanceName})`, "prefix")
+	log.importLogsFrom(mappo.log$, `MappoBackend(${instanceName})`, "prefix")
 	log.importUncaughtErrors()
 	log.importUnhandledRejections()
 
@@ -57,6 +57,8 @@ export async function icRunMappo({
 	app.use(router.allowedMethods())
 
 	app.addEventListener("listen", () => log.info(`Listening on port ${port}`))
+	app.addEventListener("close", event => log.error(new Error('Closed unexpectedly.'), { event }))
+	app.addEventListener("error", event => log.error(new Error('Uncaught error in oak application'), {cause: event}) )
 	app.listen({ port })
 
 	await mappo.updateAll()
