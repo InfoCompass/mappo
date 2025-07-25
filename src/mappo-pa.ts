@@ -17,5 +17,5 @@ icRunMappo({
 	instanceName: 	"pa",
 	storageName:	"storage/pa-item-storage",
 	adapters:		[ paAdapter ],
-	port:			9900
+	port:			9901
 })
