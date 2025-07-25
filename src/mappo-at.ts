@@ -1,0 +1,21 @@
+import { scheduleFromCron 	} from "@mappo-aggregato/mappo-aggregato/backend"
+import { InfoCompassAdapter } from "./ic-adapter.ts"
+import { icRunMappo 		} from './main.ts'
+
+
+const paAdapter = 	new InfoCompassAdapter({
+						meta:	{
+							name: 		"at",
+							sourceUrl:	"https://beratungsnetz-migration.de",
+							sourceName:	"Beratungsnetz Migration"
+						},
+						url: 		"https://api.socialmap-berlin.de/items",
+						schedule: 	scheduleFromCron("30 */1 * * *")
+					})	
+
+icRunMappo({
+	instanceName: 	"pa",
+	storageName:	"storage/pa-item-storage",
+	adapters:		[ paAdapter ],
+	port:			9902
+})
