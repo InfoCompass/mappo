@@ -1,2 +1,2 @@
-import from './mappo-pa.ts'
-import from './mappo-at.ts'
+import "./mappo-pa.ts"
+import "./mappo-at.ts"
