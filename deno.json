@@ -4,10 +4,10 @@
 		"serve-otel-pa": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-pa deno run serve-pa --unstable-otel",
 
 		"serve-at": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-at.ts",
-		"serve-otel-at": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-pa deno run serve-at --unstable-otel",
+		"serve-otel-at": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-at deno run serve-at --unstable-otel",
 
 		"serve-all": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-all.ts",
-		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-pa deno run serve-all --unstable-otel",
+		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel",
 	},
 	"imports": {
 		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.8",
