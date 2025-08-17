@@ -20,7 +20,9 @@ export class InfoCompassAdapter implements Adapter {
 		const result 	= await fetch(this.url)
 		const data		= await result.json()
 
-		return data
+		if("items" in data)	return data.items
+
+		throw new Error("No items in response. Maybe you used api. subdomain instead of public. subdomain?")	
 	}			
 
 }
