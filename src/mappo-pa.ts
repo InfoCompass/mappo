@@ -9,7 +9,7 @@ const paAdapter = 	new InfoCompassAdapter({
 							sourceUrl:	"https://socialmap-berlin.de",
 							sourceName:	"socialmap berlin"
 						},
-						url: 		"https://api.socialmap-berlin.de/items",
+						url: 		"https://public.socialmap-berlin.de/items",
 						schedule: 	scheduleFromCron("pa-updates", "10 */1 * * *")
 					})	
 
