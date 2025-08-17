@@ -9,7 +9,7 @@ const paAdapter = 	new InfoCompassAdapter({
 							sourceUrl:	"https://beratungsnetz-migration.de",
 							sourceName:	"Beratungsnetz Migration"
 						},
-						url: 		"https://api.socialmap-berlin.de/items",
+						url: 		"https://api.beratungsnetz-migration.de",
 						schedule: 	scheduleFromCron("at-updates", "30 */1 * * *")
 					})	
 
