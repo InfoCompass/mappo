@@ -6,6 +6,9 @@
 		"serve-at": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-at.ts",
 		"serve-otel-at": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-at deno run serve-at --unstable-otel",
 
+		"serve-potsdam": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-potsdam.ts",
+		"serve-otel-potsdam": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-potsdam deno run serve-potsdam --unstable-otel",
+
 		"serve-all": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-all.ts",
 		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel",
 	},
