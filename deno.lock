@@ -3,7 +3,7 @@
   "specifiers": {
     "jsr:@deno-library/compress@~0.5.6": "0.5.6",
     "jsr:@deno-library/crc32@1.0.2": "1.0.2",
-    "jsr:@mappo-aggregato/mappo-aggregato@~0.1.12": "0.1.12",
+    "jsr:@mappo-aggregato/mappo-aggregato@~0.1.13": "0.1.13",
     "jsr:@oak/commons@1": "1.0.1",
     "jsr:@oak/oak@^17.1.5": "17.1.6",
     "jsr:@oak/oak@^17.1.6": "17.1.6",
@@ -47,8 +47,8 @@
     "@deno-library/crc32@1.0.2": {
       "integrity": "d2061bfee30c87c97f285dfca0fdc4458e632dc072a33ecfc73ca5177a5a39a0"
     },
-    "@mappo-aggregato/mappo-aggregato@0.1.12": {
-      "integrity": "d308c872602e162597660cbe702abbb4dfd8d1aea0c0a2eb863ec009aa92c919",
+    "@mappo-aggregato/mappo-aggregato@0.1.13": {
+      "integrity": "e6974596f7938d6a6e1a84f8b7f2d46f730334060d84c9a7fc9b704e51b1d05c",
       "dependencies": [
         "jsr:@deno-library/compress",
         "jsr:@oak/oak@^17.1.5",
@@ -357,7 +357,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mappo-aggregato/mappo-aggregato@~0.1.12",
+      "jsr:@mappo-aggregato/mappo-aggregato@~0.1.13",
       "jsr:@oak/oak@^17.1.6",
       "jsr:@std/assert@^1.0.14",
       "npm:rxjs@^7.8.2"
