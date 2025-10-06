@@ -5,7 +5,8 @@ import	{
 			NaiveMappoDiffer, 
 			getOakRouter, 
 			LogSubject,
-			flatLog  
+			flatLog ,
+			MappoBackendConfig 
 		} 								from "@mappo-aggregato/mappo-aggregato/backend"
 import	{ 
 			Application, 
@@ -19,6 +20,7 @@ export interface RunConfig {
 	storageName		: string,
 	adapters		: Adapter[],
 	port			: number,
+	itemJsonSchema?	: Record<string, unknown> | (() => Promise<Record<string, unknown>>)
 }
 
 export async function icRunMappo({
@@ -26,6 +28,7 @@ export async function icRunMappo({
 	storageName,
 	adapters,
 	port,
+	itemJsonSchema
 } : RunConfig){
 
 
@@ -33,6 +36,7 @@ export async function icRunMappo({
 							storage			: new DenoKvStorage(storageName),
 							differ			: new NaiveMappoDiffer(),
 							adapters		: adapters,
+							itemJsonSchema	: (itemJsonSchema as MappoBackendConfig["itemJsonSchema"])
 						})
 
 	const log		=	new LogSubject()
