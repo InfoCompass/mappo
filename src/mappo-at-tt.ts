@@ -21,5 +21,5 @@ icRunMappo({
 	instanceName: 	"at-tt",
 	storageName:	"storage/at-tt-item-storage",
 	adapters:		[ atTTAdapter ],
-	port:			9913
+	port:			9912
 })
