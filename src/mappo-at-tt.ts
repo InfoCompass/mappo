@@ -14,7 +14,7 @@ const atTTAdapter 	= 	new InfoCompassTaxonomyTranslationsAdapter({
 								sourceName
 							},
 							baseUrl,
-							schedule: 	scheduleFromCron("at-tt-updates", "20 */1 * * *")
+							schedule: 	scheduleFromCron("at-tt-updates", "35 */1 * * *")
 						})	
 
 icRunMappo({
