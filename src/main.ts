@@ -66,4 +66,5 @@ export async function icRunMappo({
 	app.listen({ port })
 
 	await mappo.updateAll()
+
 }

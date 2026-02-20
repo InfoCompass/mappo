@@ -17,11 +17,14 @@
 		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel",
 	},
 	"imports": {
-		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.17",
+		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.18",
 		"@oak/oak": "jsr:@oak/oak@^17.2.0",
 		"@std/assert": "jsr:@std/assert@^1.0.19",
 		"rxjs": "npm:rxjs@^7.8.2"
 	},
+	"links":[
+		"../../mappo-aggregato"	
+	],
 	"fmt": {
 		"semiColons": false,
 		"useTabs": true,
