@@ -7,7 +7,7 @@
 		"serve-otel-at": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-at deno run serve-at --unstable-otel",
 		
 		"serve-at-tt": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-at-tt.ts",
-		"serve-otel-potsdam-tt": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-at-tt deno run serve-at-tt --unstable-otel",
+		"serve-otel-at-tt": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-at-tt deno run serve-at-tt --unstable-otel",
 
 		"serve-potsdam": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-potsdam.ts",
 		"serve-otel-potsdam": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-potsdam deno run serve-potsdam --unstable-otel",
@@ -17,9 +17,9 @@
 		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel",
 	},
 	"imports": {
-		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.16",
-		"@oak/oak": "jsr:@oak/oak@^17.1.6",
-		"@std/assert": "jsr:@std/assert@^1.0.14",
+		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.17",
+		"@oak/oak": "jsr:@oak/oak@^17.2.0",
+		"@std/assert": "jsr:@std/assert@^1.0.19",
 		"rxjs": "npm:rxjs@^7.8.2"
 	},
 	"fmt": {

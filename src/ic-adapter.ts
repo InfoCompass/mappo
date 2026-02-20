@@ -74,7 +74,8 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 
 		if(!translations || typeof translations != 'object') throw `Unable to fetch translations at ${translationsUrl}`
 
-		const items				= new Array()
+		const items					: {}[]
+									= []
 
 		// TYPES
 
