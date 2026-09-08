@@ -4,7 +4,7 @@ import { icRunMappo 							} from './main.ts'
 
 
 const baseUrl		=	"beratungsnetz-migration.de"
-const sourceName	=	"Beratungsnetz Migration"
+const sourceName	=	"Beratungsnetz Migration: Taxonomy Translations"
 
 
 const atTTAdapter 	= 	new InfoCompassTaxonomyTranslationsAdapter({

@@ -1,4 +1,14 @@
-export async function generateJsonSchema(baseUrl: string, sourceName: string, descriptionMap : Record<string, string> = {}) : Promise<Record<string, unknown>> {
+import { fetchTranslations, getTranslation } from "./translations.ts"
+
+export async function generateJsonSchema(
+		baseUrl: 			string, 
+		sourceName: 		string, 
+		descriptionMap:		Record<string, string> = {}
+
+	) : Promise<Record<string, unknown>> {
+
+	const translationsUrl	= 	`https://api.${baseUrl}/translations.json`
+	const translations		=	await fetchTranslations(translationsUrl)
 
 	const response			=	await fetch(`https://api.${baseUrl}/ic-item-config.js`)
 	const itemConfigScript	=	await response.text()
@@ -20,20 +30,21 @@ export async function generateJsonSchema(baseUrl: string, sourceName: string, de
 
 		const key				= 	property.name
 		const title 			= 	property.name
-		const description		=	descriptionMap[key]
+		const propertyLabel		=	getTranslation(translations, ['EN', 'ITEMS', title], '')
+		const propertyNote		= 	getTranslation(translations, ['EN', 'ITEMS', title+'_note'], '')
+		const description		=	[descriptionMap[key], propertyLabel, propertyNote].filter(x=>!!x).join(' - ')
 		const type				=	property.type
 		const enum_				=	property.options
 		const patternProperties	=	property.translatable
 									?	{
 											"^[a-z]{2}$": 	{ 
 																type: 			"string" ,
-																description:	"Content translated into the language determined by the language code used in this property's key. (e.g. 'en' or 'de')"
+																description:	"Text content translated into the language determined by the language code used in this property's key. (e.g. 'en' or 'de')"
 															}
 										}
 									:	undefined
 
-									
-
+		
 
 		properties[key] 	= 	{ 
 									title,  
@@ -41,7 +52,6 @@ export async function generateJsonSchema(baseUrl: string, sourceName: string, de
 									... enum_				?	{ enum: enum_}			:	{},
 									... description			?	{ description }			:	{},
 									... patternProperties	?	{ patternProperties }	:	{},
-
 								}
 	})
 

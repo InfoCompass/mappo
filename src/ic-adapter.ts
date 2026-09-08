@@ -1,5 +1,7 @@
 import { type Adapter, AdapterMeta, Item } from "@mappo-aggregato/mappo-aggregato"
 import { Observable } from "rxjs"
+import { getTranslation, fetchTranslations } from "./translations.ts"
+
 
 
 
@@ -29,7 +31,6 @@ export class InfoCompassAdapter implements Adapter {
 
 
 
-
 export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 
 	protected	baseUrl		:	string
@@ -44,19 +45,6 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 	}
 
 
-	getTranslation(translations : unknown, path : string[]) : string {
-		if(path.length == 0) return String(translations)
-
-		const [current, ...rest] = path
-
-		if(!translations)					return 'MISSING_TRANSLATION'	
-		if(typeof translations != 'object') return 'MISSING_TRANSLATION'	
-		if(!(current in translations))		return 'MISSING_TRANSLATION'	
-
-		return this.getTranslation(translations[current], rest)
-
-	} 
-
 	async collectAndAdapt() : Promise<Item[]> {
 
 		const taxonomyUrl			= `https://${this.baseUrl}/taxonomy.json`
@@ -67,14 +55,10 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 
 		if(!taxonomy || typeof taxonomy != 'object') throw `Unable to fetch taxonomy at ${taxonomyUrl}`
 
-		const translationsResult	= await fetch(translationsUrl)
-		const translations			= await translationsResult.json()
-
+		const translations			= await fetchTranslations(translationsUrl)
 		const languages				= Object.keys(translations)
 
-		if(!translations || typeof translations != 'object') throw `Unable to fetch translations at ${translationsUrl}`
-
-		const items					: {}[]
+		const items					: Record<string, unknown>[]
 									= []
 
 		// TYPES
@@ -97,7 +81,7 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 					from:			['types'],
 					name,
 					translations: 	Object.fromEntries(languages.map( 
-										lang => [lang, this.getTranslation(translations, [lang, 'TYPES', name.toUpperCase() ])]
+										lang => [lang, getTranslation(translations, [lang, 'TYPES', name.toUpperCase() ])]
 									)) 
 				})
 			})
@@ -123,7 +107,7 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 					from:			['categories'],
 					name,
 					translations: 	Object.fromEntries(languages.map( 
-										lang => [lang, this.getTranslation(translations, [lang, 'CATEGORIES', name.toUpperCase() ])]
+										lang => [lang, getTranslation(translations, [lang, 'CATEGORIES', name.toUpperCase() ])]
 									))  
 				})
 
@@ -136,7 +120,7 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 							from:			['categories', category.name, 'tags'],
 							name:			tag,
 							translations:	Object.fromEntries(languages.map( 
-												lang => [lang, this.getTranslation(translations, [lang, 'CATEGORIES', tag.toUpperCase() ])]
+												lang => [lang, getTranslation(translations, [lang, 'CATEGORIES', tag.toUpperCase() ])]
 											))  
 						})
 					})
@@ -160,7 +144,7 @@ export class InfoCompassTaxonomyTranslationsAdapter implements Adapter {
 						from:			['tags', tagGroup],
 						name:			tag,
 						translations:	Object.fromEntries(languages.map( 
-											lang => [lang, this.getTranslation(translations, [lang, 'UNSORTED_TAGS', tag.toUpperCase() ])]
+											lang => [lang, getTranslation(translations, [lang, 'UNSORTED_TAGS', tag.toUpperCase() ])]
 										)) 
 					})
 				})

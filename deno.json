@@ -12,9 +12,12 @@
 		"serve-potsdam": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-potsdam.ts",
 		"serve-otel-potsdam": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-potsdam deno run serve-potsdam --unstable-otel",
 
+		"serve-potsdam-tt": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-potsdam-tt.ts",
+		"serve-otel-potsdam-tt": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-potsdam deno run serve-potsdam-tt --unstable-otel",
+
 
 		"serve-all": "deno run --allow-read --allow-write --allow-net --unstable-kv --unstable-cron src/mappo-all.ts",
-		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel",
+		"serve-otel-all": "OTEL_DENO=true OTEL_SERVICE_NAME=mappo-all deno run serve-all --unstable-otel"
 	},
 	"imports": {
 		"@mappo-aggregato/mappo-aggregato": "jsr:@mappo-aggregato/mappo-aggregato@^0.1.19",
