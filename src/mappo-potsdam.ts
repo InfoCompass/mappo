@@ -18,7 +18,7 @@ const potsdamAdapter = 	new InfoCompassAdapter({
 						})	
 
 const propertyDescriptionMap = {
-	tags: "List of lower case string tags; [a-z0-9_-] will work. A list of already in use tags and their labels can be found here: https://mappo-tt.mittendrin.in/latest",
+	tags: "List of lower case string tags; [a-z0-9_-] will work. A list of already in use tags and their labels can be found here: https://mappo.mittendrin.in/tt/latest",
 	titleAddOn: "If the title is no proper noun, but instead supposed to be translated in the UI, you can add a title version for each language here; e.g. if title is 'Görlitzer Park' leave this property empty. If instead it is 'Stadtpark' add { 'en': 'City park'}.",
 	location_ref: "This property holds the id of another item. All location data from that other item will be mirror for the current item.",
 	recurring_event: `Recurring hours. Stringified array of rules. Each rule is also an array; e.g. '[[weekly","mon","15:45","16:45",null]]' rule[0] is the iteration interval represented by one of these strings: 'fixed', 'daily', 'mon-fri', 'weekly', 'bi-weekly', 'three-weekly', 'four-weekly', 'first_of_month', 'second_of_month', 'third_of_month', 'fourth_of_month', 'last_of_month'; rule[1] is the day of week represented by one of these strings: 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun' - not always neccessaryary; rule[2] is the start time represented by a string in HH:MM format, rule[3] is the end time represented by a string in HH:MM format; rule[4] is one example date formatted as 'YYYY-MM-DD', the example date is not always neccessary. Omitted values should be null.`											
