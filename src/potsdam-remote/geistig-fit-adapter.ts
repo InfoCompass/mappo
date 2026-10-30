@@ -156,8 +156,15 @@ export class GeistigFitAdapter implements Adapter {
 				const brief				=	{ de: "Vortrag zur Förderung der geistigen Gesundheit"}
 				const tags				=	['event', 'care', 'care_dementia']
 
-				const description		=	{ 
+				const description		=	{
 												de:`${markerDescription ? markerDescription + '<hr/>' : ''} Prävention wird ein immer wichtigeres Thema bei Demenz. Wir alle wünschen uns im Alter nicht nur körperlich, sondern auch geistig fit zu sein. Doch was können wir aktiv dafür tun, um unser Gehirn lange leistungsfähig und gesund zu halten? „Geistig fit – mit 10 Maßnahmen Demenz vorbeugen“ ist ein innovativer Vortrag zur Förderung der geistigen Gesundheit und zur Vorbeugung von Demenz. Sie erfahren, wie spannend und komplex unser Gehirn funktioniert, wie Demenzerkrankungen unser Gehirn schädigen und was wir aktiv tun können, um unser Gehirn lange fit zu halten. Ziel ist es, Menschen zu sensibilisieren und ihnen praxisnahe Strategien zu vermitteln. Im Anschluss an den Vortrag stellen sich ortsansässige Initiativen vor, die bei einem aktiven und gesunden Lebensstil unterstützen. Das Angebot richtet sich an Bürgerinnen und Bürger, vor allem im mittleren und höheren Alter, die sich für das Thema geistige Gesundheit interessieren und durch vorbeugende Maßnahmen aktiv zu ihrer mentalen Gesundheit beitragen möchten.`
+											}
+
+				const website			=	"https://www.demenz-brandenburg.de/seite/861605/geistig-fit-bleiben-mit-10-ma%C3%9Fnahmen-demenz-vorbeugen-veranstaltung.html"							
+
+				const remoteItem		=	{
+												original:	"https://www.demenz-brandenburg.de/seite/861605/geistig-fit-bleiben-mit-10-ma%C3%9Fnahmen-demenz-vorbeugen-veranstaltung.html",
+												source:		"Kompetenzzentrum Demenz für das Land Brandenburg"
 											}
 
 				const item 				=	{
@@ -174,6 +181,7 @@ export class GeistigFitAdapter implements Adapter {
 												zip,
 												city,
 												recurring_event,
+												website,
 												state
 											}
 
