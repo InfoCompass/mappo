@@ -182,7 +182,8 @@ export class GeistigFitAdapter implements Adapter {
 												city,
 												recurring_event,
 												website,
-												state
+												state,
+												remoteItem
 											}
 
 				for(const prop in item)	if(!item[prop as keyof typeof item]){
