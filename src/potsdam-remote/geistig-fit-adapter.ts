@@ -137,10 +137,10 @@ export class GeistigFitAdapter implements Adapter {
 				const endTime			=	timeMatch && timeMatch[2].replace('.', ':')
 
 				const streetPart		=	parts.find( p => p.match(/[a-zA-Z.]+\s*\d+[a-zA-Z]?$/))
+				const address			=	streetPart
 				const cityPart			=	parts.find( p => p.match(/^\s*\d{5}\s*[^\d]*$/))
 				const cityMatch			=	cityPart && cityPart.match(/^\s*(\d{5})\s*([^\d]*)\s*$/)
 				const zip				=	cityMatch && cityMatch[1]
-				
 				const city				=	cityMatch && cityMatch[2] || cityFromName
 
 				const state 			=	"public"
@@ -178,6 +178,7 @@ export class GeistigFitAdapter implements Adapter {
 												startTime,
 												endTime,
 												location,											
+												address,
 												zip,
 												city,
 												recurring_event,
