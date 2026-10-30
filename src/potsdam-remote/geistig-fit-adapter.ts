@@ -143,7 +143,7 @@ export class GeistigFitAdapter implements Adapter {
 				
 				const city				=	cityMatch && cityMatch[2] || cityFromName
 
-				const state 			=	"draft" //TODO set to "public"
+				const state 			=	"public"
 
 				const locationParts		=	parts.slice(timePart ? parts.indexOf(timePart)+1 : 0, streetPart ? parts.indexOf(streetPart) : -1)
 				const location			=	locationParts.join(', ')
@@ -164,7 +164,7 @@ export class GeistigFitAdapter implements Adapter {
 
 				const remoteItem		=	{
 												original:	"https://www.demenz-brandenburg.de/seite/861605/geistig-fit-bleiben-mit-10-ma%C3%9Fnahmen-demenz-vorbeugen-veranstaltung.html",
-												source:		"Kompetenzzentrum Demenz für das Land Brandenburg"
+												sourceName:	"Kompetenzzentrum Demenz für das Land Brandenburg"
 											}
 
 				const item 				=	{
