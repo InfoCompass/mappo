@@ -25,7 +25,7 @@ const geistigFotAdapter = 	new GeistigFitAdapter({
 									sourceUrl: 'https://www.demenz-brandenburg.de/seite/861605/geistig-fit-bleiben-mit-10-ma%C3%9Fnahmen-demenz-vorbeugen-veranstaltung.html'
 								},
 								url:		'https://www.google.com/maps/d/kml?mid=1f5Oh8PXvI3bzhcZ2DfAJGQVaZiVD9AU',
-								schedule:	scheduleFromCron("geistig-fit-2026-updates", "0 1 * * 0")
+								schedule:	scheduleFromCron("geistig-fit-2026-updates", "0 1 * * 1")
 							})
 
 const propertyDescriptionMap = {
